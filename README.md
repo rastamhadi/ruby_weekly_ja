@@ -1,4 +1,4 @@
-# Ruby Weekly 日本語あらすじ
+# Ruby Weekly 日本語サマリー
 
 This repository contains Japanese summaries of [Ruby Weekly](http://rubyweekly.com/) published on [my Japanese blog](http://rastam.hatenablog.com/). It also includes Rake tasks that help me prepare and publish the summaries for each issue.
 
