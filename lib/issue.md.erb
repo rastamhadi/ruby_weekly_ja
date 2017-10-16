@@ -7,6 +7,9 @@
 <% highlights.each do |highlight| %>
 > [<%= highlight.title %>](<%= highlight.url %>)
 
+:arrow_up: Ruby Weekly より
+<%= highlight.url.redirected_url %>
+
 
 
 <% end %>
@@ -16,6 +19,9 @@
 
 <% category_articles.each do |article| %>
 > [<%= article.title %>](<%= article.url %>)
+
+:arrow_up: Ruby Weekly より
+<%= article.url.redirected_url %>
 
 
 

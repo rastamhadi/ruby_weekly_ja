@@ -5,11 +5,19 @@ class Url
     @url = url
   end
 
+  def redirected_url
+    @redirected_url ||= Url.new(redirected_uri)
+  end
+
   def to_s
     uri.to_s
   end
 
   private
+
+  def redirected_uri
+    HTTParty.get(uri, follow_redirects: false).headers['location']
+  end
 
   def uri
     @uri ||= begin
