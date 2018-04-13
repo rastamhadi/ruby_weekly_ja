@@ -1,20 +1,20 @@
-職場の Slack の #ruby 窓で Ruby Weekly メルマガが毎週配信されます。その中から面白そうなものをピックアップして、日本語で簡単なサマリーを書くようにしています。そのサマリーをここでまとまさせていただきます。くだけた日本語で失礼いたします。
+職場の Slack 窓で Ruby Weekly メルマガが毎週配信されます。その中から面白そうなものをピックアップして、日本語で簡単なサマリーを書くようにしています。そのサマリーをここでまとまさせていただきます。くだけた日本語で失礼いたします。
 
 [<%= url %>:embed:cite]
 
 ## Highlights
 
-<% highlights.each do |highlight| %>
+<% highlights.reject(&:sponsored?).each do |highlight| %>
 > [<%= highlight.title %>](<%= highlight.url %>)
 
 
 
 <% end %>
 
-<% articles.select(&:category).group_by(&:category).each do |category, category_articles| %>
-## <%= category.titleize %>
+<% categories.reject(&:jobs?).reject(&:videos?).each do |category| %>
+## <%= category.name %>
 
-<% category_articles.each do |article| %>
+<% category.articles.reject(&:sponsored?).each do |article| %>
 > [<%= article.title %>](<%= article.url %>)
 
 

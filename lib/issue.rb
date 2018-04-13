@@ -2,8 +2,8 @@ require 'httparty'
 require 'nokogiri'
 require 'erb'
 require 'pathname'
-require_relative 'highlight'
 require_relative 'article'
+require_relative 'category'
 
 class Issue
   attr_reader :number
@@ -13,11 +13,13 @@ class Issue
   end
 
   def highlights
-    @highlights ||= dom.css(".gowide[width='100%'] [style='font-size: 18px; margin: 2px 0px'] a").map { |h| Highlight.new(h) }
+    article_chunks.first
   end
 
-  def articles
-    @articles ||= dom.css('ul').last.css('li').map { |a| Article.new(a) }
+  def categories
+    article_chunks[1..-1].each_slice(2).map do |categories, articles|
+      categories.first.tap { |c| c.articles = articles }
+    end
   end
 
   def markdown
@@ -25,6 +27,16 @@ class Issue
   end
 
   private
+
+  def article_chunks
+    @article_chunks ||= articles_and_categories.chunk(&:class).map(&:last)
+  end
+
+  def articles_and_categories
+    dom.css('.el-heading td, .item td').map do |td|
+      td.css('.mainlink').any? ? Article.new(td) : Category.new(td)
+    end
+  end
 
   def markdown_template
     Pathname.new(__dir__).join('issue.md.erb')
