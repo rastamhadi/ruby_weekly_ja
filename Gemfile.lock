@@ -11,11 +11,11 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (0.9.1)
       concurrent-ruby (~> 1.0)
-    mini_portile2 (2.3.0)
+    mini_portile2 (2.4.0)
     minitest (5.10.3)
     multi_xml (0.6.0)
-    nokogiri (1.8.1)
-      mini_portile2 (~> 2.3.0)
+    nokogiri (1.10.3)
+      mini_portile2 (~> 2.4.0)
     rake (12.3.0)
     thread_safe (0.3.6)
     tzinfo (1.2.4)
@@ -31,4 +31,4 @@ DEPENDENCIES
   rake
 
 BUNDLED WITH
-   1.16.0
+   2.0.1
