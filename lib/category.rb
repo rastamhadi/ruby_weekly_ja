@@ -13,6 +13,10 @@ class Category
     name == 'Videos'
   end
 
+  def podcasts?
+    name == 'Podcasts'
+  end
+
   def name
     @name ||= @p.text.tr('^A-Za-z& ', '').strip
   end

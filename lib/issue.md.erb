@@ -9,7 +9,7 @@
 
 <% end %>
 
-<% categories.reject(&:jobs?).reject(&:videos?).each do |category| %>
+<% categories.reject(&:jobs?).reject(&:videos?).reject(&:podcasts?).each do |category| %>
 ## <%= category.name %>
 
 <% category.articles.reject(&:sponsored?).each do |article| %>
