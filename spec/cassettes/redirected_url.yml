@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://rubyweekly.com/link/78929/web
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Content-Type:
+      - text/html;charset=utf-8
+      Content-Length:
+      - '0'
+      Status:
+      - 301 Moved Permanently
+      Location:
+      - https://www.ruby-lang.org/en/news/2019/10/22/ruby-2-7-0-preview2-released/
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      Date:
+      - Thu, 06 Feb 2020 12:39:32 GMT
+      Set-Cookie:
+      - rack.session=BAh7CEkiD3Nlc3Npb25faWQGOgZFVEkiRTNlYTBiNDFkNzg4Y2UzZDg5MjE5%0AZTI5ZTk0ODE1YWY4MTJjZmQ3ZDc1ODNlZTQ3OTdmYTFkNDcwMDRiOTY2MDQG%0AOwBGSSIJY3NyZgY7AEZJIjFPVnZaRDIreFBxT2JvTm1lM2dKWko3SXBhS01q%0AQmxFdHVFOHJyVW5hSW1zPQY7AEZJIg10cmFja2luZwY7AEZ7B0kiFEhUVFBf%0AVVNFUl9BR0VOVAY7AFRJIi0xOGU0MGUxNDAxZWVmNjdlMWFlNjllZmFiMDlh%0AZmI3MWY4N2ZmYjgxBjsARkkiGUhUVFBfQUNDRVBUX0xBTkdVQUdFBjsAVEki%0ALWRhMzlhM2VlNWU2YjRiMGQzMjU1YmZlZjk1NjAxODkwYWZkODA3MDkGOwBG%0A--2972945026af8cd11fb1efc45bf006dc5b0d02dd;
+        path=/; HttpOnly
+      X-Powered-By:
+      - Phusion Passenger 5.1.1
+      Server:
+      - nginx/1.10.2 + Phusion Passenger 5.1.1
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: null
+  recorded_at: Thu, 06 Feb 2020 12:39:32 GMT
+recorded_with: VCR 5.1.0
