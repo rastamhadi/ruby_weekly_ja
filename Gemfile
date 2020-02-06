@@ -9,4 +9,6 @@ gem 'rake'
 
 group :development do
   gem 'guard-rspec'
+  gem 'vcr'
+  gem 'webmock'
 end
