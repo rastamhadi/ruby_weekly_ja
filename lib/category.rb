@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class Category
   attr_accessor :articles
 
-  def initialize(td)
-    @p = td.css('p')
+  def initialize(td_tag)
+    @p = td_tag.css('p')
   end
 
   def jobs?

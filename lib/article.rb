@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require_relative 'url'
 
 class Article
-  def initialize(td)
-    @td = td
+  def initialize(td_tag)
+    @td_tag = td_tag
   end
 
   def title
@@ -14,12 +16,12 @@ class Article
   end
 
   def sponsored?
-    @td.css('.tag-sponsor').any?
+    @td_tag.css('.tag-sponsor').any?
   end
 
   private
 
   def link
-    @link ||= @td.css('.mainlink a').first
+    @link ||= @td_tag.css('.mainlink a').first
   end
 end
