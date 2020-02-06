@@ -47,7 +47,7 @@ class Issue
   end
 
   def html
-    HTTParty.get(url)
+    HTTParty.get(url).body
   end
 
   def url
