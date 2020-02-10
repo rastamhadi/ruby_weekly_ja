@@ -3,5 +3,7 @@ Metrics/BlockLength:
     - spec/lib/*_spec.rb
 Metrics/LineLength:
   Max: 120
+  Exclude:
+    - spec/lib/issue_spec.rb
 Style/Documentation:
   Enabled: false
