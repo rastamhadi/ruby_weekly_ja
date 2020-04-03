@@ -78,7 +78,7 @@ GEM
     shellany (0.0.1)
     thor (1.0.1)
     thread_safe (0.3.6)
-    tzinfo (1.2.6)
+    tzinfo (1.2.7)
       thread_safe (~> 0.1)
     vcr (5.1.0)
     webmock (3.8.3)
