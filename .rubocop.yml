@@ -1,7 +1,9 @@
+AllCops:
+  NewCops: enable
 Metrics/BlockLength:
   Exclude:
     - spec/lib/*_spec.rb
-Metrics/LineLength:
+Layout/LineLength:
   Max: 120
   Exclude:
     - spec/lib/issue_spec.rb
