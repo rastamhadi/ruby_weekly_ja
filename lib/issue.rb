@@ -19,13 +19,13 @@ class Issue
   end
 
   def categories
-    article_chunks[1..-1].each_slice(2).map do |categories, articles|
+    article_chunks[1..].each_slice(2).map do |categories, articles|
       categories.first.tap { |c| c.articles = articles }
     end
   end
 
   def markdown
-    ERB.new(File.read(markdown_template), nil, '<>').result(binding)
+    ERB.new(File.read(markdown_template), trim_mode: '<>').result(binding)
   end
 
   private
