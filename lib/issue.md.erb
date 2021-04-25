@@ -9,10 +9,10 @@
 
 <% end %>
 
-<% categories.reject(&:jobs?).reject(&:videos?).reject(&:podcasts?).each do |category| %>
+<% categories.each do |category| %>
 ## <%= category.name %>
 
-<% category.articles.reject(&:sponsored?).each do |article| %>
+<% category.articles.reject(&:sponsored?).reject(&:podcast?).each do |article| %>
 > [<%= article.title %>](<%= article.url %>)
 
 

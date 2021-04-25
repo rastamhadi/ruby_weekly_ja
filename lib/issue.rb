@@ -35,8 +35,8 @@ class Issue
   end
 
   def articles_and_categories
-    dom.css('.el-heading td, .item td').map do |td|
-      td.css('.mainlink').any? ? Article.new(td) : Category.new(td)
+    dom.css('.el-item~ .item td , .el-item td , .el-heading td').map do |td|
+      td.css('span a').any? ? Article.new(td) : Category.new(td)
     end
   end
 

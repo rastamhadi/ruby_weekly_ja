@@ -13,7 +13,16 @@ RSpec.describe Article do
       </td>
     HTML
   end
-  let(:unsponsored_tag) do
+  let(:podcast_tag) do
+    Nokogiri::HTML.fragment(<<~HTML.strip)
+      <td style="font-family: -apple-system,BlinkMacSystemFont,Helvetica,sans-serif; font-size: 15px; line-height: 1.55em; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse; padding: 0px 15px;" class="">
+        <p class="desc" style="color: #5a5a5a; line-height: 1.45em !important; font-size: 0.9em !important; margin: 8px 0px 6px;"><span style="font-weight: 600; font-size: 1.0em; color: #000;" class="">▶&nbsp;&nbsp;<a target="_blank" href="https://rubyweekly.com/link/106768/web" style="text-decoration: none; color: #0055bb; border-bottom-width: 1px !important; border-bottom-color: #dddddd !important; border-bottom-style: solid !important; font-size: 1.2em !important;" class="">Reducing Friction at the Authorization Layer with John Nunemaker</a></span>
+        <br><span class="name" style="color: #5a5a5a; margin-top: 4px; text-transform: uppercase; font-size: 12px; line-height: 2.0em;">Ruby Rogues Podcast</span> <span style="text-transform: uppercase; margin-left: 4px; font-size: 0.9em; border-radius: 2px; padding: 1px 4px; border: 1px solid #999999;" class="tag-podcast">podcast</span>
+        </p>
+      </td>
+    HTML
+  end
+  let(:normal_tag) do
     Nokogiri::HTML.fragment(<<~HTML.strip)
       <td>
         <p class="desc">
@@ -24,25 +33,33 @@ RSpec.describe Article do
     HTML
   end
   let(:sponsored_article) { Article.new(sponsored_tag) }
-  let(:unsponsored_article) { Article.new(unsponsored_tag) }
+  let(:podcast_article) { Article.new(podcast_tag) }
+  let(:normal_article) { Article.new(normal_tag) }
 
   describe '#title' do
     specify do
-      expect(unsponsored_article.title).to eq 'Exploring Big-O Notation with Ruby'
+      expect(normal_article.title).to eq 'Exploring Big-O Notation with Ruby'
     end
   end
 
   describe '#url' do
     specify do
-      expect(unsponsored_article.url).to be_a Url
-      expect(unsponsored_article.url.to_s).to eq 'https://rubyweekly.com/link/83501/web'
+      expect(normal_article.url).to be_a Url
+      expect(normal_article.url.to_s).to eq 'https://rubyweekly.com/link/83501/web'
     end
   end
 
   describe '#sponsored?' do
     specify do
       expect(sponsored_article).to be_sponsored
-      expect(unsponsored_article).not_to be_sponsored
+      expect(normal_article).not_to be_sponsored
+    end
+  end
+
+  describe '#podcast?' do
+    specify do
+      expect(podcast_article).to be_podcast
+      expect(normal_article).not_to be_podcast
     end
   end
 end

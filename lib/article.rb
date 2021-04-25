@@ -19,9 +19,13 @@ class Article
     @td_tag.css('.tag-sponsor').any?
   end
 
+  def podcast?
+    @td_tag.css('.tag-podcast').any?
+  end
+
   private
 
   def link
-    @link ||= @td_tag.css('.mainlink a').first
+    @link ||= @td_tag.css('span a').first
   end
 end
