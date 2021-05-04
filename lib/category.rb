@@ -7,6 +7,10 @@ class Category
     @p = td_tag.css('p')
   end
 
+  def seen_on_twitter?
+    name == 'Seen on Twitter'
+  end
+
   def name
     @name ||= @p.text.tr('^A-Za-z& ', '').strip
   end

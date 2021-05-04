@@ -9,7 +9,7 @@
 
 <% end %>
 
-<% categories.each do |category| %>
+<% categories.reject(&:seen_on_twitter?).each do |category| %>
 ## <%= category.name %>
 
 <% category.articles.reject(&:sponsored?).reject(&:podcast?).each do |article| %>
