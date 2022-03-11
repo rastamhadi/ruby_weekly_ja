@@ -11,12 +11,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Set up Ruby
-      uses: actions/setup-ruby@v1
-      with:
-        ruby-version: 2.6.x
+      uses: ruby/setup-ruby@v1
     - name: Install gems
       run: |
-        gem install bundler --no-document
+        gem install bundler -N
         bundle install --jobs 4 --retry 3
     - name: Run tests
       run: bundle exec rspec
