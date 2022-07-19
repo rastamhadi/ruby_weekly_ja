@@ -78,7 +78,7 @@ GEM
     rspec-support (3.11.0)
     shellany (0.0.1)
     thor (1.2.1)
-    tzinfo (2.0.4)
+    tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     vcr (6.1.0)
     webmock (3.14.0)
