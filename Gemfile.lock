@@ -45,7 +45,7 @@ GEM
     minitest (5.19.0)
     multi_xml (0.6.0)
     nenv (0.3.0)
-    nokogiri (1.15.3)
+    nokogiri (1.15.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     notiffany (0.1.3)
