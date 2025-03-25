@@ -25,7 +25,7 @@ GEM
       bigdecimal
       rexml
     csv (3.3.3)
-    diff-lcs (1.6.0)
+    diff-lcs (1.6.1)
     drb (2.2.1)
     ffi (1.17.1)
     formatador (1.1.0)
